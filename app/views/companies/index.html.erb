@@ -3,4 +3,4 @@
 <% @companies.each do |company| %>
   <%= company.name %>
 <% end %>
-
+<%= link_to 'SHOW', company_path(@companies[0]) %>
