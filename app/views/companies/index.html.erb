@@ -1,0 +1,12 @@
+<h1>Company#index</h1>
+<p>Find me in app/views/company/index.html.erb</p>
+<table>
+  <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= company.name %></td>
+        <td><%= link_to 'show', company %></td>
+      </tr>  
+    <% end %>
+  </tbody>  
+</table>
