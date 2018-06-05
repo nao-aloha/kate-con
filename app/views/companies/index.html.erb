@@ -5,6 +5,7 @@
     <% @companies.each do |company| %>
       <tr>
         <td><%= company.name %></td>
+        <td>1時間あたりの授業料：<%= company.hourly_rate %>円から</td>
         <td><%= link_to 'show', company %></td>
       </tr>  
     <% end %>
