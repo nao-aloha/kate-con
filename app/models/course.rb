@@ -1,3 +1,3 @@
 class Course < ApplicationRecord
-  belongs_to :company
+  has_many :companies
 end
