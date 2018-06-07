@@ -1,4 +1,4 @@
-ActiveAdmin.register Course do
+ActiveAdmin.register LessonPurpose do
 	permit_params :company_name, :name
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
