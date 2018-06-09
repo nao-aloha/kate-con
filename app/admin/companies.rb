@@ -17,12 +17,12 @@ ActiveAdmin.register Company do
       end
     end
 
-    # f.inputs "lesson" do
-    #   f.has_many :lessons do |t|
-    #     t.input :name
-    #     t.input :name
-    #   end
-    # end
+    f.inputs "lessons" do
+      f.has_many :lessons do |t|
+        t.input :name
+        t.input :fee
+      end
+    end
     #f.inputs do
       #f.has_many :lesson_purposes, heading: 'LessonPurpose', allow_destroy: true, new_record: true do |a|
         #a.input :lesson_purpose_text
