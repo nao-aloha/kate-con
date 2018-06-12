@@ -1,6 +1,6 @@
 ActiveAdmin.register Company do
 
-	permit_params :name, :hourly_rate, :lesson, :lesson_id, :lesson_name, :lesson_fee, :lesson_purpose_id, :lesson_purpose_name,  company_lesson_purposes_attributes: [:id, :lesson_purpose, :company_lesson_purposes_id, :_destroy], lessons_attributes: [:id, :lesson_id, :name, :lesson_name, :fee, :lesson_fee, :_destroy]	
+	permit_params :name, :hourly_rate, :company_id, :lesson, :lesson_id, :lesson_name, :lesson_fee, :lesson_purpose_id, :lesson_purpose_name,  company_lesson_purposes_attributes: [:id, :lesson_purpose, :company_lesson_purposes_id, :_destroy], lessons_attributes: [:company_id, :id, :lesson_id, :name, :lesson_name, :fee, :lesson_fee, :_destroy]	
 
 	form do |f|
 	#form(:html => { :multipart => true }) do |f|
@@ -17,12 +17,20 @@ ActiveAdmin.register Company do
       end
     end
 
-    f.inputs "lessons" do
-      f.has_many :lessons do |f|
-        f.input :name
-        f.input :fee
+    f.inputs do
+      f.has_many :lessons do |t|
+        t.input :name
+        t.input :fee
       end
     end
+
+    # f.inputs do
+    #   f.has_many :lessons, heading: 'Lessons', allow_destroy: true, new_record: true do |a|
+    #     a.input :name
+    #     a.input :fee
+    #   end
+    # end
+
     #f.inputs do
       #f.has_many :lesson_purposes, heading: 'LessonPurpose', allow_destroy: true, new_record: true do |a|
         #a.input :lesson_purpose_text
