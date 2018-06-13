@@ -1,6 +1,6 @@
 ActiveAdmin.register Company do
 
-	permit_params :name
+	permit_params :name, lessons_attributes: [:id, :name, :fee, :_destroy]
   
 	form do |f|
 	#form(:html => { :multipart => true }) do |f|
@@ -17,12 +17,12 @@ ActiveAdmin.register Company do
     #   end
     # end
 
-    # f.inputs do
-    #   f.has_many :lessons do |t|
-    #     t.input :name
-    #     t.input :fee
-    #   end
-    # end
+    f.inputs do
+      f.has_many :lessons do |t|
+        t.input :name
+        t.input :fee
+      end
+    end
 
     # f.inputs do
     #   f.has_many :lessons, heading: 'Lessons', allow_destroy: true, new_record: true do |a|
