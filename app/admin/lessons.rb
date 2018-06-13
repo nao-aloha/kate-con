@@ -1,6 +1,6 @@
 ActiveAdmin.register Lesson do
 
-	permit_params :name, :fee
+	permit_params :name, :fee, :company_id
   #:lesson_purpose_id, :lesson_purpose_name,  company_lesson_purposes_attributes: [:id, :lesson_purpose, :company_lesson_purposes_id, :_destroy]	
 
 	# form do |f|
