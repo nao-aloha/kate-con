@@ -6,16 +6,16 @@ ActiveAdmin.register Company do
 	#form(:html => { :multipart => true }) do |f|
     f.inputs "Details" do
       f.input :name
-      f.input :hourly_rate
+      #f.input :hourly_rate
       #f.input :lesson_purpose_name
       
     end
     
-    f.inputs "lesson_purposes" do
-      f.has_many :company_lesson_purposes do |t|
-        t.input :lesson_purpose
-      end
-    end
+    # f.inputs "lesson_purposes" do
+    #   f.has_many :company_lesson_purposes do |t|
+    #     t.input :lesson_purpose
+    #   end
+    # end
 
     # f.inputs do
     #   f.has_many :lessons do |t|
