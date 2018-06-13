@@ -1,7 +1,7 @@
 ActiveAdmin.register Company do
 
-	permit_params :name, :hourly_rate, :company_id, :lesson, :lesson_id, :lesson_name, :lesson_fee, :lesson_purpose_id, :lesson_purpose_name,  company_lesson_purposes_attributes: [:id, :lesson_purpose, :company_lesson_purposes_id, :_destroy], lessons_attributes: [:company_id, :id, :lesson_id, :name, :lesson_name, :fee, :lesson_fee, :_destroy]	
-
+	permit_params :name
+  
 	form do |f|
 	#form(:html => { :multipart => true }) do |f|
     f.inputs "Details" do
