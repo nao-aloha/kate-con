@@ -1,4 +1,4 @@
-class LessonPurpose < ApplicationRecord
+class Purpose < ApplicationRecord
   	
 	
   # has_many :companies, through: :company_lesson_purposes
