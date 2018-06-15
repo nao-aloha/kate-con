@@ -1,0 +1,13 @@
+<h1>Lessons#index</h1>
+<p>Find me in app/views/lessons/index.html.erb</p>
+<table>
+  <tbody>
+    <% @lessons.each do |lesson| %>
+      <tr>
+        <td><%= lesson.name %></td>
+        <td>1時間あたりの授業料：<%= lesson.fee %>円から</td>
+        <td><%= link_to 'show', lesson %></td>
+      </tr>  
+    <% end %>
+  </tbody>  
+</table>
