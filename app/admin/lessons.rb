@@ -1,6 +1,6 @@
 ActiveAdmin.register Lesson do
 
-	permit_params :name, :fee, :company_id, :company_name, lesson_targets_attributes: [:id, :name, :target_id, :_destroy]
+	permit_params :name, :fee, :company_id, :company_name, lesson_targets_attributes: [:id, :name, :target_id, :_destroy], lesson_purposes_attributes: [:id, :name, :purpose_id, :_destroy]
   #:lesson_purpose_id, :lesson_purpose_name,  company_lesson_purposes_attributes: [:id, :lesson_purpose, :company_lesson_purposes_id, :_destroy]	
   form do |f|
 	#form(:html => { :multipart => true }) do |f|
@@ -15,6 +15,11 @@ ActiveAdmin.register Lesson do
       end
     end
 
+    f.inputs "lesson_purposes" do
+      f.has_many :lesson_purposes do |t|
+        t.input :purpose
+      end
+    end
     # f.inputs do
     #   f.has_many :lessons do |t|
     #     t.input :name
