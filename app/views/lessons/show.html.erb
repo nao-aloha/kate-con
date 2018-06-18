@@ -14,7 +14,17 @@
   <%= @lesson.fee %>円から
 </p>
 <p>
-  <% @lesson.lesson_purposes.each do |lesson_purposes| %>
-  <%= lesson_purposes.purpose %>
+  <strong>対応授業目的:</strong>
+  <% @lesson.purposes.each do |purpose| %>
+  <%= purpose.name %>
   <% end %>
-  
+</p>  
+<p>
+  <strong>対応生徒:</strong>
+  <% @lesson.targets.each do |target| %>
+  <%= target.name %>
+  <% end %>
+</p>  
+<p>
+<%= link_to 'Lesson一覧lessonsページに戻る', '/' %>
+</p>

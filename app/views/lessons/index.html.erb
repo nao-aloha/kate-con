@@ -8,12 +8,19 @@
         <td><%= lesson.name %></td>
         <td>1時間あたりの授業料：<%= lesson.fee %>円から</td>
 
-        <% lesson.purposes.each do |purpose| %>
-          <%= purpose.purpose_name %>
+        <td>
+          <% lesson.purposes.each do |purpose| %>
+          <%= purpose.name %>
 
-        <% end %>
-        <td><%= lesson.lesson_purposes.name %></td>
-        <td><%= lesson.lesson_targets %></td>
+          <% end %>
+        </td>  
+        <td>
+          <% lesson.targets.each do |target| %>
+          <%= target.name %>
+
+          <% end %>
+        </td>  
+        
         <td><%= link_to 'show', lesson %></td>
       </tr>  
     <% end %>
