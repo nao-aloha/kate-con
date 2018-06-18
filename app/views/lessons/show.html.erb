@@ -13,3 +13,8 @@
   <strong>１時間あたりの授業料:</strong>
   <%= @lesson.fee %>円から
 </p>
+<p>
+  <% @lesson.lesson_purposes.each do |lesson_purposes| %>
+  <%= lesson_purposes.purpose %>
+  <% end %>
+  
