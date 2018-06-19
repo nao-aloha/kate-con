@@ -11,9 +11,5 @@ class LessonsController < ApplicationController
 
   end
 
-  def lesson_purposes
-  	
-
-  end
 end
   
