@@ -1,7 +1,4 @@
 class LessonPurpose < ApplicationRecord
-  	
-	
-  has_many :companies, through: :company_lesson_purposes
-  has_many :company_lesson_purposes
-  
+  belongs_to :lesson, optional: true
+  belongs_to :purpose, optional: true
 end

@@ -2,8 +2,8 @@
 
 one:
   company: one
-  lesson_purpose: one
+  name: MyString
 
 two:
   company: two
-  lesson_purpose: two
+  name: MyString

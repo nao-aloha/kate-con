@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_13_134934) do
+ActiveRecord::Schema.define(version: 2018_06_15_144405) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -47,22 +47,15 @@ ActiveRecord::Schema.define(version: 2018_06_13_134934) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "hourly_rate"
-  end
-
-  create_table "company_lesson_purposes", force: :cascade do |t|
-    t.integer "company_id"
-    t.integer "lesson_purpose_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_company_lesson_purposes_on_company_id"
-    t.index ["lesson_purpose_id"], name: "index_company_lesson_purposes_on_lesson_purpose_id"
   end
 
   create_table "lesson_purposes", force: :cascade do |t|
-    t.string "name"
+    t.integer "lesson_id"
+    t.integer "purpose_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_lesson_purposes_on_lesson_id"
+    t.index ["purpose_id"], name: "index_lesson_purposes_on_purpose_id"
   end
 
   create_table "lesson_targets", force: :cascade do |t|
@@ -81,6 +74,12 @@ ActiveRecord::Schema.define(version: 2018_06_13_134934) do
     t.datetime "updated_at", null: false
     t.integer "company_id"
     t.index ["company_id"], name: "index_lessons_on_company_id"
+  end
+
+  create_table "purposes", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "targets", force: :cascade do |t|
